@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import { AnimatedSection } from './AnimatedSection'
 
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'
+const EMAILJS_SERVICE_ID = 'service_51p88jg'
+const EMAILJS_TEMPLATE_ID = 'template_omc7vby'
+const EMAILJS_PUBLIC_KEY = 'wN1hd_l-mJDCjfgHj'
 
 const floatingIcons = [
   { icon: 'fa-paper-plane', x: '5%', y: '12%', delay: 0, size: '1.4rem' },
@@ -233,7 +233,7 @@ export default function Contact() {
               >
                 <div className="grid sm:grid-cols-2 gap-5">
                   <motion.div custom={0} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                    <FloatingLabel label="Your Name" name="from_name" required icon="fa-user" />
+                    <FloatingLabel label="Your Name" name="name" required icon="fa-user" />
                   </motion.div>
                   <motion.div custom={1} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
                     <FloatingLabel label="Email Address" name="reply_to" type="email" required icon="fa-at" />
@@ -245,6 +245,7 @@ export default function Contact() {
                 <motion.div custom={3} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
                   <FloatingLabel label="Tell me about your project…" name="message" isTextarea required icon="fa-pen-fancy" />
                 </motion.div>
+                <input type="hidden" name="time" value="" ref={(el) => { if (el) el.value = new Date().toLocaleString() }} />
 
                 <motion.div custom={4} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
                   <motion.button type="submit" disabled={status === 'sending'}
