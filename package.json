@@ -1,0 +1,24 @@
+{
+  "name": "new-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {\n    "dev": "vite",\n    "build": "vite build",\n    "preview": "vite preview"\n  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "framer-motion": "^11.18.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tailwindcss": "^4.1.18",
+    "vite": "^6.4.1"
+  }
+}
+
