@@ -231,7 +231,7 @@ export default function Home() {
                 {[
                   { label: 'Phone', value: '+86 18583994003', href: 'tel:+8618583994003', icon: 'fa-phone', color: 'var(--color-cyan)' },
                   { label: 'GitHub', value: 'github.com/xohdik', href: 'https://github.com/xohdik', icon: 'fa-brands fa-github', color: 'var(--color-ink)' },
-                  { label: 'Location', value: 'Chengdu, China', icon: 'fa-location-dot', color: 'var(--color-accent)' },
+                  { label: 'Location', value: 'Hybrid (Remote & Onsite)', icon: 'fa-location-dot', color: 'var(--color-accent)' },
                 ].map((item, i) => (
                   <motion.div key={i}
                     initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
