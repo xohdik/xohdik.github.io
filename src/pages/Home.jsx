@@ -14,16 +14,11 @@ const socialLinks = [
   { icon: 'fa-solid fa-globe', href: 'https://www.friendra.com', label: 'Friendra' },
 ]
 
-// Put your video at /public/videos/hero-bg.mp4
-// Download from: https://www.pexels.com/video/close-up-of-code-installing-dependencies-35475096/
+// Video — local file at /public/videos/hero-bg.mp4
 const VIDEO_URL = '/videos/hero-bg.mp4'
-const VIDEO_FALLBACKS = [
-  'https://videos.pexels.com/video-files/5483077/5483077-sd_640_360_25fps.mp4',
-  'https://videos.pexels.com/video-files/5495845/5495845-sd_640_360_25fps.mp4',
-]
 
-// Looping typewriter hook — replays every pauseMs after finishing
-function useTypewriter(text, speed = 30, startDelay = 0, pauseMs = 1000) {
+// Typewriter hook — animates once, then stays
+function useTypewriter(text, speed = 30, startDelay = 0) {
   const [displayed, setDisplayed] = useState('')
   const [started, setStarted] = useState(false)
   useEffect(() => {
@@ -32,24 +27,19 @@ function useTypewriter(text, speed = 30, startDelay = 0, pauseMs = 1000) {
   }, [startDelay])
   useEffect(() => {
     if (!started) return
-    if (displayed.length < text.length) {
-      const timer = setTimeout(() => setDisplayed(text.slice(0, displayed.length + 1)), speed)
-      return () => clearTimeout(timer)
-    } else {
-      // Finished typing — pause then restart
-      const resetTimer = setTimeout(() => setDisplayed(''), pauseMs)
-      return () => clearTimeout(resetTimer)
-    }
-  }, [displayed, started, text, speed, pauseMs])
-  return displayed
+    if (displayed.length >= text.length) return
+    const timer = setTimeout(() => setDisplayed(text.slice(0, displayed.length + 1)), speed)
+    return () => clearTimeout(timer)
+  }, [displayed, started, text, speed])
+  return { displayed, done: displayed.length >= text.length }
 }
 
-function TypewriterBlock({ text, speed = 25, delay = 0 }) {
-  const displayed = useTypewriter(text, speed, delay)
+function TypewriterBlock({ text, speed = 45, delay = 0 }) {
+  const { displayed, done } = useTypewriter(text, speed, delay)
   return (
     <span>
       {displayed}
-      {displayed.length < text.length && (
+      {!done && (
         <span className="inline-block w-0.5 h-5 ml-0.5 align-middle animate-pulse" style={{ background: 'var(--color-accent)' }} />
       )}
     </span>
@@ -57,25 +47,13 @@ function TypewriterBlock({ text, speed = 25, delay = 0 }) {
 }
 
 function VideoBackground() {
-  const [src, setSrc] = useState(VIDEO_URL)
-  const [fallbackIdx, setFallbackIdx] = useState(0)
-
-  function handleError() {
-    if (fallbackIdx < VIDEO_FALLBACKS.length) {
-      setSrc(VIDEO_FALLBACKS[fallbackIdx])
-      setFallbackIdx(i => i + 1)
-    }
-  }
-
   return (
     <div className="absolute inset-0 z-0">
       <video
-        key={src}
         autoPlay muted loop playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        onError={handleError}
       >
-        <source src={src} type="video/mp4" />
+        <source src={VIDEO_URL} type="video/mp4" />
       </video>
       <div className="video-overlay" />
     </div>
@@ -223,16 +201,16 @@ export default function Home() {
               <div>
                 <p className="text-lg leading-relaxed mb-6 font-mono" style={{ color: 'var(--color-ink-muted)' }}>
                   <TypewriterBlock
-                    text="PhD in Software Engineering. I specialize in software verification and programming languages, with a focus on making AI-generated code correct, reliable, and explainable."
-                    speed={20}
+                    text="Tunde is a dedicated Software Engineer who specializes in software verification and programming languages, with a focus on making AI-generated code correct, reliable, and explainable."
+                    speed={45}
                     delay={600}
                   />
                 </p>
                 <p className="text-lg leading-relaxed mb-6 font-mono" style={{ color: 'var(--color-ink-muted)' }}>
                   <TypewriterBlock
-                    text="I develop methods that combine formal analysis, program graphs, and neuro-symbolic reasoning to ensure AI code can be trusted before deployment."
-                    speed={20}
-                    delay={5000}
+                    text="He develops methods that combine formal analysis, program graphs, and neuro-symbolic reasoning to ensure AI code can be trusted before deployment."
+                    speed={45}
+                    delay={9000}
                   />
                 </p>
                 <motion.p
