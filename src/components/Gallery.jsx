@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AnimatedSection } from './AnimatedSection'
 
-// 50 placeholder slots — replace src with your actual images
+// 50 placeholder slots
 const images = Array.from({ length: 50 }, (_, i) => ({
   id: i + 1,
-  src: null, // Replace with actual image path, e.g. `/images/gallery/photo-${i+1}.jpg`
+  src: `/images/gallery/photo-${i + 1}.jpeg`, // Your actual images!
   alt: `Gallery image ${i + 1}`,
 }))
 
