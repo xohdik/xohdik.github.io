@@ -37,7 +37,7 @@ export default function Footer() {
                 <i className="fa-brands fa-github"></i>github.com/xohdik
               </a>
               <span className="flex items-center gap-3">
-                <i className="fa-solid fa-map-pin" style={{ color: 'var(--color-accent)' }}></i>Chengdu, China · Open to Remote
+                <i className="fa-solid fa-map-pin" style={{ color: 'var(--color-accent)' }}></i>Hybrid (Remote & Onsite)
               </span>
             </div>
           </div>

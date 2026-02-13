@@ -1,4 +1,3 @@
-import TawkToChat from './components/TawkToChat'
 import FunWidget from './components/FunWidget'
 import BackToTop from './components/BackToTop'
 import React, { useState, useEffect } from 'react'
@@ -45,7 +44,6 @@ export default function App() {
 
   return (
     <HashRouter>
-      <TawkToChat />
       <FunWidget />
       <BackToTop />
       <Navbar theme={theme} onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
