@@ -1,4 +1,5 @@
 import TawkToChat from './components/TawkToChat'
+import FunWidget from './components/FunWidget'
 import React, { useState, useEffect } from 'react'
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -43,7 +44,8 @@ export default function App() {
 
   return (
     <HashRouter>
-      <TawkToChat /> {/* 👈 Add this line */}
+      <TawkToChat />
+      <FunWidget />
       <Navbar theme={theme} onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
       <AnimatedRoutes />
       <Footer />

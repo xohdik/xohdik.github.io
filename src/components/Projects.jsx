@@ -129,7 +129,7 @@ export default function Projects() {
                     <span key={c} className="chip">{c}</span>
                   ))}
                 </div>
-                {p.links && (
+                {p.links ? (
                   <div className="flex gap-3 mt-auto">
                     {p.links.map(l => (
                       <a
@@ -144,6 +144,19 @@ export default function Projects() {
                         {l.label}
                       </a>
                     ))}
+                  </div>
+                ) : (
+                  <div className="flex gap-3 mt-auto">
+                    <a
+                      href="https://github.com/xohdik?tab=repositories"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:underline"
+                      style={{ color: 'var(--color-primary)' }}
+                    >
+                      <i className="fa-brands fa-github"></i>
+                      View Repos
+                    </a>
                   </div>
                 )}
               </div>
