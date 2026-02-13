@@ -11,10 +11,12 @@ const images = Array.from({ length: 50 }, (_, i) => ({
 
 export default function Gallery() {
   const [lightbox, setLightbox] = useState(null)
-  const [loadedImages] = useState(() => images.filter(img => img.src))
-
-  // Show placeholder message if no images uploaded yet
-  if (loadedImages.length === 0) {
+  
+  // DIRECT APPROACH - use images directly, no filtering
+  const hasImages = images.some(img => img.src && img.src !== null)
+  
+  // Show placeholder message if no images
+  if (!hasImages) {
     return (
       <AnimatedSection id="gallery" className="py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-6">
@@ -44,7 +46,7 @@ export default function Gallery() {
       <div className="max-w-[1200px] mx-auto px-6">
         <h2 className="section-title mb-12">Gallery</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-          {loadedImages.map((img) => (
+          {images.map((img) => (
             <motion.button
               key={img.id}
               whileHover={{ scale: 1.03 }}
@@ -58,6 +60,7 @@ export default function Gallery() {
                 alt={img.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
+                onError={(e) => console.log('Failed to load:', img.src)}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
             </motion.button>
