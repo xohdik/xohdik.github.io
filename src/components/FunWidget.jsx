@@ -84,7 +84,7 @@ function MusicPlayer() {
         />
       </div>
       <p className="text-sm font-bold mb-1" style={{ color: 'var(--color-ink)' }}>{tracks[track].name}</p>
-      <p className="text-xs mb-4" style={{ color: 'var(--color-ink-muted)' }}>Lo-Fi Background Music</p>
+      <p className="text-xs mb-4" style={{ color: 'var(--color-ink-muted)' }}>Audio Mack</p>
       <div className="flex gap-3 justify-center">
         <button onClick={toggle}
           className="px-5 py-2 rounded-full text-xs font-bold text-white transition-all hover:scale-105"
@@ -214,7 +214,7 @@ function SnakeGame() {
 // =================== MAIN FLOATING WIDGET ===================
 const tabs = [
   { id: 'quote', icon: 'fa-quote-left', label: 'Quote' },
-  { id: 'music', icon: 'fa-headphones', label: 'Music' },
+  { id: 'music', icon: 'fa-headphones', label: 'Audio' },
   { id: 'game', icon: 'fa-gamepad', label: 'Game' },
 ]
 
@@ -223,7 +223,7 @@ export default function FunWidget() {
   const [tab, setTab] = useState('quote')
 
   return (
-    <div className="fixed bottom-6 right-6 z-40" style={{ right: '80px' }}>
+    <div className="fixed bottom-6 left-6 z-40">
       <AnimatePresence>
         {open && (
           <motion.div

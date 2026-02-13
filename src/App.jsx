@@ -1,5 +1,6 @@
 import TawkToChat from './components/TawkToChat'
 import FunWidget from './components/FunWidget'
+import BackToTop from './components/BackToTop'
 import React, { useState, useEffect } from 'react'
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -34,7 +35,7 @@ function AnimatedRoutes() {
 export default function App() {
   const [theme, setTheme] = useState(() =>
     typeof window !== 'undefined'
-      ? localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      ? localStorage.getItem('theme') || 'light'
       : 'light'
   )
   useEffect(() => {
@@ -46,6 +47,7 @@ export default function App() {
     <HashRouter>
       <TawkToChat />
       <FunWidget />
+      <BackToTop />
       <Navbar theme={theme} onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
       <AnimatedRoutes />
       <Footer />

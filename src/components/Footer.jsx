@@ -37,10 +37,21 @@ export default function Footer() {
                 <i className="fa-brands fa-github"></i>github.com/xohdik
               </a>
               <span className="flex items-center gap-3">
-                <i className="fa-solid fa-map-pin" style={{ color: 'var(--color-accent)' }}></i>Hybrid (Remote & Onsite)
+                <i className="fa-solid fa-map-pin" style={{ color: 'var(--color-accent)' }}></i>Chengdu, China · Open to Remote
               </span>
             </div>
           </div>
+        </div>
+        {/* Status ticker */}
+        <div className="mt-8 py-3 px-5 rounded-xl flex items-center gap-3 text-sm"
+          style={{ background: 'var(--color-border-light)', border: '1px solid var(--color-border)' }}>
+          <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: 'var(--color-mint)' }}></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5" style={{ background: 'var(--color-mint)' }}></span>
+          </span>
+          <span style={{ color: 'var(--color-ink-muted)' }}>
+            Currently working on: <strong style={{ color: 'var(--color-ink)' }}>Spec-Aware Siamese GAT for Neuro-Symbolic Verification</strong>
+          </span>
         </div>
         <div className="mt-10 pt-6 text-center text-xs" style={{ borderTop: '1px solid var(--color-border)', color: 'var(--color-ink-muted)', opacity: 0.6 }}>
           © {new Date().getFullYear()} TundeCodes — Designed for reliability & a neuro-symbolic future.

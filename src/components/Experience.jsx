@@ -16,7 +16,7 @@ const experiences = [
       'DevOps: automated deployment, system monitoring, incident response',
       '99.9% availability for 2,000+ users; zero critical security breaches',
     ],
-    story: 'Friendra started as a personal project to build a privacy-first social network. I chose Mastodon\'s open-source framework and customized it from the ground up — deploying on a Contabo VPS, configuring Nginx reverse proxy with SSL, and setting up Cloudflare for DDoS protection. Managing a live platform with 2,000+ users taught me real-world DevOps: automated backups, zero-downtime deploys, and incident response. This experience directly shaped my understanding of building reliable, production-grade software — the same reliability I now pursue in my PhD research on software verification.',
+    story: 'Friendra started as a personal project to build a privacy-first social network. I designed and built the platform from scratch — deploying on a Contabo VPS, configuring Nginx reverse proxy with SSL, and setting up Cloudflare for DDoS protection. Managing a live platform with 2,000+ users taught me real-world DevOps: automated backups, zero-downtime deploys, and incident response. This experience directly shaped my understanding of building reliable, production-grade software — the same reliability I now pursue in my PhD research on software verification.',
   },
   {
     icon: 'fa-graduation-cap',

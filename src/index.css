@@ -138,3 +138,23 @@
 [data-theme="dark"] .video-overlay {
   background: linear-gradient(180deg, rgba(10,15,26,0.35) 0%, rgba(10,15,26,0.7) 35%, rgba(10,15,26,0.93) 65%, #0a0f1a 100%);
 }
+
+/* ===== PAGE TRANSITION BAR ===== */
+.page-loading-bar {
+  position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-cyan));
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease infinite;
+}
+
+/* ===== SMOOTH PAGE TRANSITIONS ===== */
+.page-enter { opacity: 0; transform: translateY(20px); }
+.page-enter-active { opacity: 1; transform: translateY(0); transition: all 0.4s cubic-bezier(0.22,1,0.36,1); }
+
+/* ===== TOOLTIP STYLES ===== */
+.skill-tooltip { pointer-events: none; }
+
+/* ===== FUN WIDGET MOBILE ===== */
+@media (max-width: 640px) {
+  .fun-widget-panel { width: 280px !important; }
+}

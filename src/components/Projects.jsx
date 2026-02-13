@@ -86,6 +86,13 @@ const projects = [
     chips: ['Medical Imaging', 'BraTS 2020', 'Frequency Decomposition', 'PyTorch'],
     badge: 'Ongoing',
   },
+  {
+    icon: 'fa-microchip',
+    color: 'var(--color-cyan)',
+    title: 'Integrated Chip Defect Detection',
+    desc: 'Automated visual inspection system using Halcon machine vision software for detecting micro-defects on integrated circuit chips, improving quality control throughput in semiconductor manufacturing.',
+    chips: ['Halcon', 'Machine Vision', 'Defect Detection', 'QC Automation'],
+  },
 ]
 
 export default function Projects() {
