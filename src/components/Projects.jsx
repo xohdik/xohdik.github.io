@@ -79,13 +79,14 @@ const projects = [
     chips: ['YOLOv8', 'Computer Vision', 'Object Detection'],
   },
   {
-    icon: 'fa-brain',
+    icon: 'fa-project-diagram',
     color: 'var(--color-accent)',
-    title: 'QAFF-Net: Quality-Aware Frequency Fusion Network',
-    desc: 'Building upon HFF-Net with three novel modules — Modality Reliability Estimation, Uncertainty-Aware FDCA, and Adaptive Frequency Gating — for robust brain tumor segmentation under degraded modality conditions.',
-    chips: ['Medical Imaging', 'BraTS 2020', 'Frequency Decomposition', 'PyTorch'],
-    badge: 'Ongoing',
-  },
+    title: 'Scalable Program Graph Extraction for Large Codebases',
+    desc: 'Engineering a high-performance system for extracting and analyzing control-flow and data-flow graphs from multi-language software repositories.',
+    chips: ['Systems', 'Static Analysis', 'Scalability', 'Tooling'],
+    badge: 'In Development',
+},
+
   {
     icon: 'fa-microchip',
     color: 'var(--color-cyan)',

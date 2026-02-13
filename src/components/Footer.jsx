@@ -13,7 +13,7 @@ export default function Footer() {
               <h3 className="text-lg font-extrabold tracking-tight" style={{ color: 'var(--color-ink)' }}>TundeCodes</h3>
             </div>
             <p className="text-sm leading-relaxed max-w-[350px]" style={{ color: 'var(--color-ink-muted)' }}>
-              Software Engineer & Researcher. Building reliable, intelligent systems through neuro-symbolic software analysis.
+              Software Engineer. Building reliable, intelligent systems through neuro-symbolic software analysis.
             </p>
           </div>
           <div>

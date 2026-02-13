@@ -159,18 +159,6 @@ export default function Home() {
             SOFTWARE ENGINEER
           </motion.p>
 
-          {/* Availability badge */}
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold mb-8"
-            style={{ background: 'rgba(5,150,105,0.1)', color: 'var(--color-mint)', border: '1px solid rgba(5,150,105,0.2)' }}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="pulse-ring absolute inline-flex h-full w-full rounded-full bg-green-400"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            Available for work
-          </motion.div>
-
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
             className="flex flex-wrap gap-4 justify-center"
           >
@@ -282,65 +270,6 @@ export default function Home() {
                     Resume <i className="fa-solid fa-download text-xs"></i>
                   </a>
                 </motion.div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ===== STATS COUNTER ===== */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-[1000px] mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { value: '65K+', label: 'Code Graphs Analyzed', icon: 'fa-diagram-project', color: 'var(--color-primary)' },
-              { value: '6', label: 'Programming Languages', icon: 'fa-code', color: 'var(--color-accent)' },
-              { value: '10+', label: 'Applied Projects', icon: 'fa-rocket', color: 'var(--color-cyan)' },
-              { value: '3+', label: 'Publications', icon: 'fa-file-lines', color: 'var(--color-amber)' },
-            ].map((stat, i) => (
-              <motion.div key={i}
-                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="text-center p-5 rounded-2xl"
-                style={{ background: 'var(--color-surface-raised)', border: '1px solid var(--color-border)' }}
-              >
-                <div className="w-10 h-10 rounded-xl mx-auto mb-3 flex items-center justify-center"
-                  style={{ background: `color-mix(in oklab, ${stat.color} 10%, transparent)` }}>
-                  <i className={`fa-solid ${stat.icon}`} style={{ color: stat.color }}></i>
-                </div>
-                <div className="text-2xl md:text-3xl font-black mb-1" style={{ color: 'var(--color-ink)' }}>{stat.value}</div>
-                <div className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-ink-muted)' }}>{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CURRENTLY BUILDING ===== */}
-      <section className="py-14 relative">
-        <div className="max-w-[900px] mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="rounded-2xl p-6 md:p-8 relative overflow-hidden"
-            style={{ background: '#111827', border: '1px solid #253350' }}
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] opacity-10" style={{ background: 'var(--color-primary)' }} />
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
-                </span>
-                <span className="text-xs font-bold uppercase tracking-wider text-green-400">Currently Building</span>
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-2">Spec-Aware Siamese GAT for Neuro-Symbolic Verification</h3>
-              <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                Extending my Siamese GAT architecture with Input-Output specification graphs alongside code graphs, 
-                enabling AI systems to reason about code correctness through formal specifications — not just pattern matching.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['Graph Neural Networks', 'Formal Specs', 'PyTorch Geometric', '65K+ Code Graphs'].map(t => (
-                  <span key={t} className="px-3 py-1 rounded-full text-xs font-semibold text-slate-300 border border-slate-600" style={{ background: 'rgba(255,255,255,0.05)' }}>{t}</span>
-                ))}
               </div>
             </div>
           </motion.div>
