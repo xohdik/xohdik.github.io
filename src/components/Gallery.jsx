@@ -1,50 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AnimatedSection } from './AnimatedSection'
-
-// 50 placeholder slots — replace src with actual images
-const images = Array.from({ length: 50 }, (_, i) => ({
-  id: i + 1,
-  src: `/images/gallery/photo-${i + 1}.jpeg`, // ✅ Your actual images!
-  alt: `Gallery image ${i + 1}`,
-}))
 
 export default function Gallery() {
   const [lightbox, setLightbox] = useState(null)
   
-  // DIRECT APPROACH - use images directly, no filtering
-  const hasImages = images.some(img => img.src && img.src !== null)
-  
-  // Show placeholder message if no images
-  if (!hasImages) {
-    return (
-      <AnimatedSection id="gallery" className="py-20 lg:py-28">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2 className="section-title mb-12">Gallery</h2>
-          <div
-            className="portfolio-card text-center py-16"
-            style={{ borderStyle: 'dashed' }}
-          >
-            <i
-              className="fa-solid fa-images text-5xl mb-4 block"
-              style={{ color: 'var(--color-border)', opacity: 0.5 }}
-            ></i>
-            <p className="text-lg font-semibold" style={{ color: 'var(--color-ink-muted)' }}>
-              Gallery coming soon
-            </p>
-            <p className="text-sm mt-1" style={{ color: 'var(--color-ink-muted)', opacity: 0.7 }}>
-              50 image slots ready — upload images to <code className="font-mono text-xs px-1.5 py-0.5 rounded" style={{ background: 'var(--color-border-light)' }}>/images/gallery/</code>
-            </p>
-          </div>
-        </div>
-      </AnimatedSection>
-    )
-  }
+  const images = [
+    { id: 1, src: '/images/gallery/photo-1.jpeg', alt: 'Gallery image 1' },
+    { id: 2, src: '/images/gallery/photo-2.jpeg', alt: 'Gallery image 2' },
+    { id: 3, src: '/images/gallery/photo-3.jpeg', alt: 'Gallery image 3' }
+  ]
 
   return (
     <AnimatedSection id="gallery" className="py-20 lg:py-28">
       <div className="max-w-[1200px] mx-auto px-6">
         <h2 className="section-title mb-12">Gallery</h2>
+        
+        {/* Show images directly - no filtering */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
           {images.map((img) => (
             <motion.button
@@ -60,7 +32,6 @@ export default function Gallery() {
                 alt={img.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
-                onError={(e) => console.log('Failed to load:', img.src)}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
             </motion.button>
