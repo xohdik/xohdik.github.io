@@ -16,14 +16,18 @@ import { researchItems } from '../data/portfolio';
   <section class="research-detail-list section-shell">
     {researchItems.map((item, i) => {
       const isAnonymous = 'anonymous' in item && item.anonymous === true;
-      return (
-        <article class={`research-detail reveal ${isAnonymous ? 'anonymous-research' : ''}`} id={item.slug}>
+      return isAnonymous ? (
+        <article class="research-detail anonymous-research reveal" id={item.slug}>
+          <div><h2>{item.title}</h2></div>
+        </article>
+      ) : (
+        <article class="research-detail reveal" id={item.slug}>
           <div class="research-detail-index">{String(i + 1).padStart(2, '0')}</div>
           <div>
-            {!isAnonymous && <p class="research-status">{item.status}</p>}
+            <p class="research-status">{item.status}</p>
             <h2>{item.title}</h2>
-            {!isAnonymous && <p class="research-venue">{item.venue}</p>}
-            {!isAnonymous && <p class="research-focus">{item.focus}</p>}
+            <p class="research-venue">{item.venue}</p>
+            <p class="research-focus">{item.focus}</p>
           </div>
         </article>
       );
