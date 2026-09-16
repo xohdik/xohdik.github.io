@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { researchItems } from '../data/portfolio';
+---
+
+<BaseLayout
+  title="Research — TundeCodes"
+  description="Research by Sodiq Babatunde Ologun on software reliability, code intelligence, benchmark validity, and multimodal forecasting."
+>
+  <section class="page-hero section-shell reveal">
+    <p class="section-number">RESEARCH / SOFTWARE RELIABILITY</p>
+    <h1>Understanding what software models actually learn.</h1>
+    <p>My research sits between software engineering and machine learning: code representations, benchmark design, evaluation leakage, program behavior, and reliable experimental methodology.</p>
+  </section>
+
+  <section class="research-detail-list section-shell">
+    {researchItems.map((item, i) => (
+      <article class="research-detail reveal">
+        <div class="research-detail-index">{String(i + 1).padStart(2, '0')}</div>
+        <div>
+          <p class="research-status">{item.status}</p>
+          <h2>{item.title}</h2>
+          <p class="research-venue">{item.venue}</p>
+          <p class="research-focus">{item.focus}</p>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="research-principles section-shell reveal">
+    <p class="section-number">METHOD / WHAT MATTERS</p>
+    <div class="principles-grid">
+      <div><strong>01</strong><h3>Evaluation before architecture</h3><p>A sophisticated model is not useful if the benchmark allows leakage or cannot support the conclusion being claimed.</p></div>
+      <div><strong>02</strong><h3>Reproducible evidence</h3><p>I prefer deterministic recomputation, frozen artifacts, explicit split logic, and tests that make silent experimental drift harder.</p></div>
+      <div><strong>03</strong><h3>Mechanism over headline metrics</h3><p>The interesting question is often not whether a score increased, but why it increased and whether the mechanism transfers.</p></div>
+    </div>
+  </section>
+</BaseLayout>
