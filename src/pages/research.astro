@@ -8,31 +8,34 @@ import { researchItems } from '../data/portfolio';
   description="Research by Sodiq Babatunde Ologun on software reliability, code intelligence, benchmark validity, program behavior, and multimodal forecasting."
 >
   <section class="page-hero section-shell reveal">
-    <p class="section-number">RESEARCH / SOFTWARE RELIABILITY · CODE INTELLIGENCE</p>
-    <h1>Understanding what software models actually learn.</h1>
-    <p>My current research portfolio is centered on mechanism-aware evaluation, leakage-resistant benchmarks, program behavior, graph-based code representations, and reproducible empirical software engineering.</p>
+    <p class="section-number">RESEARCH / DEBUG THE EVIDENCE</p>
+    <h1>Trace the failure mode. Test the explanation.</h1>
+    <p>My research asks what software models actually learn, where evaluation can mislead us, and how experimental design can make those failure modes visible.</p>
   </section>
 
   <section class="research-detail-list section-shell">
-    {researchItems.map((item, i) => (
-      <article class="research-detail reveal" id={item.slug}>
-        <div class="research-detail-index">{String(i + 1).padStart(2, '0')}</div>
-        <div>
-          <p class="research-status">{item.status}</p>
-          <h2>{item.title}</h2>
-          <p class="research-venue">{item.venue}</p>
-          <p class="research-focus">{item.focus}</p>
-        </div>
-      </article>
-    ))}
+    {researchItems.map((item, i) => {
+      const isAnonymous = 'anonymous' in item && item.anonymous === true;
+      return (
+        <article class={`research-detail reveal ${isAnonymous ? 'anonymous-research' : ''}`} id={item.slug}>
+          <div class="research-detail-index">{String(i + 1).padStart(2, '0')}</div>
+          <div>
+            {!isAnonymous && <p class="research-status">{item.status}</p>}
+            <h2>{item.title}</h2>
+            {!isAnonymous && <p class="research-venue">{item.venue}</p>}
+            {!isAnonymous && <p class="research-focus">{item.focus}</p>}
+          </div>
+        </article>
+      );
+    })}
   </section>
 
   <section class="research-principles section-shell reveal">
-    <p class="section-number">METHOD / WHAT MATTERS</p>
+    <p class="section-number">DEBUG PROTOCOL</p>
     <div class="principles-grid">
-      <div><strong>01</strong><h3>Evaluation before architecture</h3><p>A sophisticated model is not useful if the benchmark allows leakage or cannot support the conclusion being claimed.</p></div>
-      <div><strong>02</strong><h3>Reproducible evidence</h3><p>I prefer deterministic recomputation, frozen artifacts, explicit split logic, and tests that make silent experimental drift harder.</p></div>
-      <div><strong>03</strong><h3>Mechanism over headline metrics</h3><p>The interesting question is often not whether a score increased, but why it increased and whether the mechanism transfers.</p></div>
+      <div><strong>01</strong><h3>Reproduce the failure</h3><p>Before changing the model, make the evaluation failure concrete and measurable.</p></div>
+      <div><strong>02</strong><h3>Isolate the mechanism</h3><p>Use controlled interventions to distinguish memorization, shortcuts, representation effects, and genuine behavioral signal.</p></div>
+      <div><strong>03</strong><h3>Lock the evidence</h3><p>Freeze artifacts, recompute deterministically, and keep the path from raw data to conclusion auditable.</p></div>
     </div>
   </section>
 </BaseLayout>
