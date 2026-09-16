@@ -5,13 +5,13 @@ import { selectedWork, researchItems, experience, capabilities } from '../data/p
 
 <BaseLayout
   title="TundeCodes — Software Engineer"
-  description="Sodiq Babatunde Ologun is a software engineer and researcher building dependable systems, production platforms, and code intelligence tools."
+  description="Sodiq Babatunde Ologun is a software engineer and researcher building dependable software products, production platforms, and code-intelligence research systems."
 >
   <section class="hero section-shell">
     <div class="hero-copy reveal">
-      <p class="eyebrow">SOFTWARE ENGINEER · RESEARCHER</p>
+      <p class="eyebrow">SOFTWARE ENGINEER · PRODUCT BUILDER · RESEARCHER</p>
       <h1>I build software that has to <em>hold up.</em></h1>
-      <p class="hero-intro">Engineering dependable systems, production platforms, and research tools at the intersection of software reliability and intelligent code analysis.</p>
+      <p class="hero-intro">I work across product engineering, production systems, and empirical software engineering — from commerce and social platforms to code-model evaluation and benchmark reliability.</p>
       <div class="hero-links">
         <a class="primary-link" href="#work">Selected work <span>↓</span></a>
         <a class="plain-link" href="https://github.com/xohdik" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -19,7 +19,7 @@ import { selectedWork, researchItems, experience, capabilities } from '../data/p
     </div>
 
     <figure class="portrait-wrap reveal delay-1">
-      <div class="portrait-meta"><span>ENGINEERING · SYSTEMS · RESEARCH</span><span>2026</span></div>
+      <div class="portrait-meta"><span>PRODUCT · SYSTEMS · RESEARCH</span><span>2026</span></div>
       <img src="/images/tundecodes.webp" width="900" height="900" alt="Portrait of Sodiq Babatunde Ologun" loading="eager" fetchpriority="high" />
       <figcaption>SODIQ BABATUNDE OLOGUN</figcaption>
     </figure>
@@ -27,36 +27,36 @@ import { selectedWork, researchItems, experience, capabilities } from '../data/p
 
   <section class="statement section-shell reveal">
     <p class="section-number">01 / PROFILE</p>
-    <p class="statement-copy">I work across <strong>software engineering, systems, data, and research</strong>. The common thread is reliability: understanding how software behaves, how it fails, and how to build it so people can trust it.</p>
+    <p class="statement-copy">I build <strong>real products and rigorous research systems</strong>. The common thread is reliability: understanding how software behaves, how it fails, and how to engineer it so people can trust it.</p>
   </section>
 
   <section id="work" class="work-section dark-section">
     <div class="section-shell">
       <div class="section-heading reveal">
-        <div><p class="section-number">02 / SELECTED WORK</p><h2>Built to ship.<br/>Built to last.</h2></div>
-        <p>Selected systems and research engineering work. Fewer projects, more substance.</p>
+        <div><p class="section-number">02 / CURRENT FLAGSHIP WORK</p><h2>Built to ship.<br/>Built to withstand scrutiny.</h2></div>
+        <p>SellNaija leads the current product portfolio, followed by the MCT, EMSE, and TOSEM research programs and production work on Friendra.</p>
       </div>
       <div class="work-list">
-        {selectedWork.map((project) => (
+        {selectedWork.slice(0, 5).map((project) => (
           <a class="work-row reveal" href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noreferrer' : undefined}>
             <span class="work-index">{project.index}</span>
             <div class="work-main"><h3>{project.title}</h3><p>{project.summary}</p></div>
-            <div class="work-side"><span>{project.role}</span><small>{project.meta}</small></div>
+            <div class="work-side"><span>{project.role}</span><small>{project.status} · {project.meta}</small></div>
             <span class="work-arrow">↗</span>
           </a>
         ))}
       </div>
-      <div class="section-more reveal"><a href="/work">View project details ↗</a></div>
+      <div class="section-more reveal"><a href="/work">View all selected work ↗</a></div>
     </div>
   </section>
 
   <section id="research" class="research-section section-shell">
     <div class="section-heading reveal">
-      <div><p class="section-number">03 / RESEARCH</p><h2>Software should be understood, not guessed at.</h2></div>
-      <p>My research focuses on reliable code intelligence, benchmark validity, program representations, and the gap between model performance and actual software behavior.</p>
+      <div><p class="section-number">03 / RESEARCH</p><h2>Software models should be understood, not guessed at.</h2></div>
+      <p>My current research asks whether model performance reflects real program behavior, representation learning, or evaluation artifacts such as leakage and surface shortcuts.</p>
     </div>
     <div class="research-list">
-      {researchItems.slice(0, 3).map((item, i) => (
+      {researchItems.slice(0, 4).map((item, i) => (
         <article class="research-row reveal">
           <span>{String(i + 1).padStart(2, '0')}</span>
           <div><h3>{item.title}</h3><p>{item.venue}</p></div>
@@ -64,13 +64,13 @@ import { selectedWork, researchItems, experience, capabilities } from '../data/p
         </article>
       ))}
     </div>
-    <div class="section-more reveal"><a href="/research">View research ↗</a></div>
+    <div class="section-more reveal"><a href="/research">View full research portfolio ↗</a></div>
   </section>
 
   <section id="experience" class="experience-section section-shell">
     <div class="section-heading reveal">
       <div><p class="section-number">04 / EXPERIENCE</p><h2>From production incidents to research questions.</h2></div>
-      <p>Engineering experience shaped by running real systems, working with operational data, and investigating software reliability.</p>
+      <p>My engineering perspective comes from both sides: operating real software for users and investigating how software and models fail under controlled evaluation.</p>
     </div>
     <div class="experience-list">
       {experience.map(([date, role, org, desc]) => (
@@ -90,8 +90,8 @@ import { selectedWork, researchItems, experience, capabilities } from '../data/p
         <h2>Engineering judgment over decoration.</h2>
       </div>
       <div class="about-copy reveal delay-1">
-        <p>I’m a software engineer and researcher with experience spanning production infrastructure, data engineering, full-stack development, program analysis, and machine learning for software engineering.</p>
-        <p>I care about clear systems, measurable outcomes, maintainable code, and technical decisions that survive contact with production.</p>
+        <p>I’m a software engineer and researcher working across product architecture, production infrastructure, full-stack development, data systems, program analysis, and machine learning for software engineering.</p>
+        <p>I care about maintainable systems, defensible technical decisions, measurable outcomes, and experiments that can survive serious review.</p>
         <div class="capability-list">
           {capabilities.map((cap) => <span>{cap}</span>)}
         </div>
@@ -103,7 +103,7 @@ import { selectedWork, researchItems, experience, capabilities } from '../data/p
     <p class="section-number">06 / CONTACT</p>
     <h2>Have something difficult to build?</h2>
     <div class="contact-grid">
-      <p>I'm interested in serious engineering problems, research collaborations, and teams working on software that needs to be reliable.</p>
+      <p>I'm interested in serious engineering problems, software reliability research, product architecture, and teams building systems that need to work beyond the demo.</p>
       <div class="contact-links">
         <a href="mailto:ologunbabatunde@gmail.com">Email ↗</a>
         <a href="https://github.com/xohdik" target="_blank" rel="noreferrer">GitHub ↗</a>
