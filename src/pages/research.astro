@@ -5,17 +5,17 @@ import { researchItems } from '../data/portfolio';
 
 <BaseLayout
   title="Research — TundeCodes"
-  description="Research by Sodiq Babatunde Ologun on software reliability, code intelligence, benchmark validity, and multimodal forecasting."
+  description="Research by Sodiq Babatunde Ologun on software reliability, code intelligence, benchmark validity, program behavior, and multimodal forecasting."
 >
   <section class="page-hero section-shell reveal">
-    <p class="section-number">RESEARCH / SOFTWARE RELIABILITY</p>
+    <p class="section-number">RESEARCH / SOFTWARE RELIABILITY · CODE INTELLIGENCE</p>
     <h1>Understanding what software models actually learn.</h1>
-    <p>My research sits between software engineering and machine learning: code representations, benchmark design, evaluation leakage, program behavior, and reliable experimental methodology.</p>
+    <p>My current research portfolio is centered on mechanism-aware evaluation, leakage-resistant benchmarks, program behavior, graph-based code representations, and reproducible empirical software engineering.</p>
   </section>
 
   <section class="research-detail-list section-shell">
     {researchItems.map((item, i) => (
-      <article class="research-detail reveal">
+      <article class="research-detail reveal" id={item.slug}>
         <div class="research-detail-index">{String(i + 1).padStart(2, '0')}</div>
         <div>
           <p class="research-status">{item.status}</p>
