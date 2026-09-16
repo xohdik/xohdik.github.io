@@ -1,246 +1,115 @@
 ---
-import '../styles/global.css';
-
-const selectedWork = [
-  {
-    index: '01',
-    title: 'Friendra',
-    role: 'Founder / CTO / Server Administrator',
-    summary: 'A privacy-first social platform designed, deployed, and operated end-to-end, including infrastructure, PostgreSQL, Nginx, Cloudflare, monitoring, and incident response.',
-    meta: 'Production systems · 2,000+ users · 99.9% availability',
-    href: 'https://www.friendra.com',
-  },
-  {
-    index: '02',
-    title: 'Explainable Code Retrieval',
-    role: 'Research Engineer',
-    summary: 'GraphCodeBERT-GAT combines pretrained code representations with hierarchical graph attention to make neural code retrieval more interpretable.',
-    meta: 'PyTorch Geometric · GraphCodeBERT · GNNs',
-    href: '#research',
-  },
-  {
-    index: '03',
-    title: 'Program Verification Systems',
-    role: 'Software Engineering Research',
-    summary: 'Research tooling for program graphs, code intelligence, neural verification, and benchmark reliability across multilingual software datasets.',
-    meta: 'Static analysis · Program graphs · ML for software engineering',
-    href: '#research',
-  },
-  {
-    index: '04',
-    title: 'Data & Platform Engineering',
-    role: 'Engineer',
-    summary: 'Production-oriented software spanning data pipelines, SQL optimization, full-stack systems, automation, and server administration.',
-    meta: 'Python · PostgreSQL · React · Linux · Docker',
-    href: '#experience',
-  },
-];
-
-const research = [
-  {
-    title: 'GraphCodeBERT-GAT: Hierarchical Graph Attention Networks for Explainable Neural Code Retrieval',
-    venue: 'ICCWAMTIP 2025',
-    type: 'Published research',
-  },
-  {
-    title: 'Neural Pairwise Bug Verification',
-    venue: 'Empirical study across multilingual code',
-    type: 'Software reliability research',
-  },
-  {
-    title: 'Entity-Level Leakage in Code Intelligence Benchmarks',
-    venue: 'Benchmark auditing and evaluation methodology',
-    type: 'Software engineering research',
-  },
-];
-
-const experience = [
-  ['2023 — NOW', 'CTO & Server Administrator', 'Friendra', 'Production infrastructure, deployment, databases, monitoring, security, and platform reliability.'],
-  ['2024 — 2026', 'Graduate Software Engineer', 'UESTC', 'Research and engineering across AI for software engineering, code intelligence, program analysis, and full-stack systems.'],
-  ['2021 — 2023', 'Data Engineer', 'Fidelity Pension Managers', 'Python automation, SQL optimization, data transformation, reporting, and operational data systems.'],
-  ['2020 — 2021', 'Technical Support', 'Tekniteed Nigeria Limited', 'Enterprise troubleshooting across software, hardware, and network infrastructure.'],
-];
-
-const capabilities = [
-  'Software architecture', 'Distributed & web systems', 'Python', 'TypeScript / JavaScript', 'React', 'PostgreSQL',
-  'Linux / Nginx', 'Docker', 'Program analysis', 'Graph neural networks', 'PyTorch', 'Code intelligence',
-];
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { selectedWork, researchItems, experience, capabilities } from '../data/portfolio';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f1efe9" />
-    <meta name="description" content="TundeCodes — Software engineer and researcher building dependable software systems and code intelligence tools." />
-    <meta property="og:title" content="TundeCodes — Software Engineer" />
-    <meta property="og:description" content="Software engineer and researcher focused on dependable systems, software reliability, and code intelligence." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/tundecodes.webp" />
-    <link rel="icon" href="/favicon.svg" />
-    <title>TundeCodes — Software Engineer</title>
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="TundeCodes home">TUNDE<span>CODES</span></a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#research">Research</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
-      </nav>
-      <div class="header-actions">
-        <a class="text-link desktop-only" href="/resume.pdf" target="_blank">Résumé ↗</a>
-        <button class="menu-button" aria-label="Open menu" aria-expanded="false">Menu</button>
+<BaseLayout
+  title="TundeCodes — Software Engineer"
+  description="Sodiq Babatunde Ologun is a software engineer and researcher building dependable systems, production platforms, and code intelligence tools."
+>
+  <section class="hero section-shell">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">SOFTWARE ENGINEER · RESEARCHER</p>
+      <h1>I build software that has to <em>hold up.</em></h1>
+      <p class="hero-intro">Engineering dependable systems, production platforms, and research tools at the intersection of software reliability and intelligent code analysis.</p>
+      <div class="hero-links">
+        <a class="primary-link" href="#work">Selected work <span>↓</span></a>
+        <a class="plain-link" href="https://github.com/xohdik" target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
-    </header>
-
-    <div class="mobile-menu" aria-hidden="true">
-      <a href="#work">Work</a>
-      <a href="#research">Research</a>
-      <a href="#experience">Experience</a>
-      <a href="#about">About</a>
-      <a href="/resume.pdf" target="_blank">Résumé ↗</a>
     </div>
 
-    <main id="top">
-      <section class="hero section-shell">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">SOFTWARE ENGINEER · RESEARCHER</p>
-          <h1>I build software that has to <em>hold up.</em></h1>
-          <p class="hero-intro">Engineering dependable systems, production platforms, and research tools at the intersection of software reliability and intelligent code analysis.</p>
-          <div class="hero-links">
-            <a class="primary-link" href="#work">Selected work <span>↓</span></a>
-            <a class="plain-link" href="https://github.com/xohdik" target="_blank" rel="noreferrer">GitHub ↗</a>
-          </div>
+    <figure class="portrait-wrap reveal delay-1">
+      <div class="portrait-meta"><span>ENGINEERING · SYSTEMS · RESEARCH</span><span>2026</span></div>
+      <img src="/images/tundecodes.webp" width="900" height="900" alt="Portrait of Sodiq Babatunde Ologun" loading="eager" fetchpriority="high" />
+      <figcaption>SODIQ BABATUNDE OLOGUN</figcaption>
+    </figure>
+  </section>
+
+  <section class="statement section-shell reveal">
+    <p class="section-number">01 / PROFILE</p>
+    <p class="statement-copy">I work across <strong>software engineering, systems, data, and research</strong>. The common thread is reliability: understanding how software behaves, how it fails, and how to build it so people can trust it.</p>
+  </section>
+
+  <section id="work" class="work-section dark-section">
+    <div class="section-shell">
+      <div class="section-heading reveal">
+        <div><p class="section-number">02 / SELECTED WORK</p><h2>Built to ship.<br/>Built to last.</h2></div>
+        <p>Selected systems and research engineering work. Fewer projects, more substance.</p>
+      </div>
+      <div class="work-list">
+        {selectedWork.map((project) => (
+          <a class="work-row reveal" href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noreferrer' : undefined}>
+            <span class="work-index">{project.index}</span>
+            <div class="work-main"><h3>{project.title}</h3><p>{project.summary}</p></div>
+            <div class="work-side"><span>{project.role}</span><small>{project.meta}</small></div>
+            <span class="work-arrow">↗</span>
+          </a>
+        ))}
+      </div>
+      <div class="section-more reveal"><a href="/work">View project details ↗</a></div>
+    </div>
+  </section>
+
+  <section id="research" class="research-section section-shell">
+    <div class="section-heading reveal">
+      <div><p class="section-number">03 / RESEARCH</p><h2>Software should be understood, not guessed at.</h2></div>
+      <p>My research focuses on reliable code intelligence, benchmark validity, program representations, and the gap between model performance and actual software behavior.</p>
+    </div>
+    <div class="research-list">
+      {researchItems.slice(0, 3).map((item, i) => (
+        <article class="research-row reveal">
+          <span>{String(i + 1).padStart(2, '0')}</span>
+          <div><h3>{item.title}</h3><p>{item.venue}</p></div>
+          <p>{item.status}</p>
+        </article>
+      ))}
+    </div>
+    <div class="section-more reveal"><a href="/research">View research ↗</a></div>
+  </section>
+
+  <section id="experience" class="experience-section section-shell">
+    <div class="section-heading reveal">
+      <div><p class="section-number">04 / EXPERIENCE</p><h2>From production incidents to research questions.</h2></div>
+      <p>Engineering experience shaped by running real systems, working with operational data, and investigating software reliability.</p>
+    </div>
+    <div class="experience-list">
+      {experience.map(([date, role, org, desc]) => (
+        <article class="experience-row reveal">
+          <time>{date}</time>
+          <div><h3>{role}</h3><p>{org}</p></div>
+          <p>{desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="section-shell about-grid">
+      <div class="about-lead reveal">
+        <p class="section-number">05 / ABOUT</p>
+        <h2>Engineering judgment over decoration.</h2>
+      </div>
+      <div class="about-copy reveal delay-1">
+        <p>I’m a software engineer and researcher with experience spanning production infrastructure, data engineering, full-stack development, program analysis, and machine learning for software engineering.</p>
+        <p>I care about clear systems, measurable outcomes, maintainable code, and technical decisions that survive contact with production.</p>
+        <div class="capability-list">
+          {capabilities.map((cap) => <span>{cap}</span>)}
         </div>
+      </div>
+    </div>
+  </section>
 
-        <figure class="portrait-wrap reveal delay-1">
-          <div class="portrait-meta"><span>BASED BETWEEN ENGINEERING & RESEARCH</span><span>2026</span></div>
-          <img src="/images/tundecodes.webp" width="900" height="900" alt="Portrait of Tunde" loading="eager" />
-          <figcaption>SODIQ BABATUNDE OLOGUN</figcaption>
-        </figure>
-      </section>
-
-      <section class="statement section-shell reveal">
-        <p class="section-number">01 / PROFILE</p>
-        <p class="statement-copy">I work across <strong>software engineering, systems, data, and research</strong>. The common thread is reliability: understanding how software behaves, how it fails, and how to build it so people can trust it.</p>
-      </section>
-
-      <section id="work" class="work-section dark-section">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div><p class="section-number">02 / SELECTED WORK</p><h2>Built to ship.<br/>Built to last.</h2></div>
-            <p>Selected systems and research engineering work. Fewer projects, more substance.</p>
-          </div>
-          <div class="work-list">
-            {selectedWork.map((project) => (
-              <a class="work-row reveal" href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noreferrer' : undefined}>
-                <span class="work-index">{project.index}</span>
-                <div class="work-main"><h3>{project.title}</h3><p>{project.summary}</p></div>
-                <div class="work-side"><span>{project.role}</span><small>{project.meta}</small></div>
-                <span class="work-arrow">↗</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="research" class="research-section section-shell">
-        <div class="section-heading reveal">
-          <div><p class="section-number">03 / RESEARCH</p><h2>Software should be understood, not guessed at.</h2></div>
-          <p>My research focuses on reliable code intelligence, benchmark validity, program representations, and the gap between model performance and actual software behavior.</p>
-        </div>
-        <div class="research-list">
-          {research.map((item, i) => (
-            <article class="research-row reveal">
-              <span>{String(i + 1).padStart(2, '0')}</span>
-              <div><h3>{item.title}</h3><p>{item.venue}</p></div>
-              <p>{item.type}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="experience" class="experience-section section-shell">
-        <div class="section-heading reveal">
-          <div><p class="section-number">04 / EXPERIENCE</p><h2>From production incidents to research questions.</h2></div>
-          <p>Engineering experience shaped by running real systems, working with operational data, and investigating software reliability.</p>
-        </div>
-        <div class="experience-list">
-          {experience.map(([date, role, org, desc]) => (
-            <article class="experience-row reveal">
-              <time>{date}</time>
-              <div><h3>{role}</h3><p>{org}</p></div>
-              <p>{desc}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="about" class="about-section">
-        <div class="section-shell about-grid">
-          <div class="about-lead reveal">
-            <p class="section-number">05 / ABOUT</p>
-            <h2>Engineering judgment over decoration.</h2>
-          </div>
-          <div class="about-copy reveal delay-1">
-            <p>I’m a software engineer and researcher with experience spanning production infrastructure, data engineering, full-stack development, program analysis, and machine learning for software engineering.</p>
-            <p>I care about clear systems, measurable outcomes, maintainable code, and technical decisions that survive contact with production.</p>
-            <div class="capability-list">
-              {capabilities.map((cap) => <span>{cap}</span>)}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-section section-shell reveal">
-        <p class="section-number">06 / CONTACT</p>
-        <h2>Have something difficult to build?</h2>
-        <div class="contact-grid">
-          <p>I'm interested in serious engineering problems, research collaborations, and teams working on software that needs to be reliable.</p>
-          <div class="contact-links">
-            <a href="mailto:ologunbabatunde@gmail.com">Email ↗</a>
-            <a href="https://github.com/xohdik" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/ologunbabatunde" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="/resume.pdf" target="_blank">Résumé ↗</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer section-shell">
-      <div class="footer-mark">TUNDE<span>CODES</span></div>
-      <div><span>SOFTWARE ENGINEER</span><span>© 2026</span></div>
-    </footer>
-
-    <script>
-      const menuButton = document.querySelector('.menu-button');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      const menuLinks = document.querySelectorAll('.mobile-menu a');
-      const toggleMenu = () => {
-        const open = menuButton?.getAttribute('aria-expanded') === 'true';
-        menuButton?.setAttribute('aria-expanded', String(!open));
-        mobileMenu?.setAttribute('aria-hidden', String(open));
-        document.body.classList.toggle('menu-open', !open);
-      };
-      menuButton?.addEventListener('click', toggleMenu);
-      menuLinks.forEach((link) => link.addEventListener('click', () => {
-        menuButton?.setAttribute('aria-expanded', 'false');
-        mobileMenu?.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('menu-open');
-      }));
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    </script>
-  </body>
-</html>
+  <section class="contact-section section-shell reveal">
+    <p class="section-number">06 / CONTACT</p>
+    <h2>Have something difficult to build?</h2>
+    <div class="contact-grid">
+      <p>I'm interested in serious engineering problems, research collaborations, and teams working on software that needs to be reliable.</p>
+      <div class="contact-links">
+        <a href="mailto:ologunbabatunde@gmail.com">Email ↗</a>
+        <a href="https://github.com/xohdik" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/ologunbabatunde" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé ↗</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
