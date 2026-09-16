@@ -39,16 +39,15 @@ import { selectedWork, researchItems, experience, capabilities } from '../data/p
       <div class="work-list">
         {selectedWork.slice(0, 5).map((project) => {
           const isAnonymous = 'anonymous' in project && project.anonymous === true;
-          return (
-            <a class={`work-row reveal ${isAnonymous ? 'anonymous-work' : ''}`} href={project.href}>
+          return isAnonymous ? (
+            <a class="work-row anonymous-work reveal" href={project.href}>
+              <div class="work-main"><h3>{project.title}</h3></div>
+            </a>
+          ) : (
+            <a class="work-row reveal" href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noreferrer' : undefined}>
               <span class="work-index">{project.index}</span>
-              <div class="work-main">
-                <h3>{project.title}</h3>
-                {!isAnonymous && <p>{project.summary}</p>}
-              </div>
-              {!isAnonymous && (
-                <div class="work-side"><span>{project.role}</span><small>{project.status} · {project.meta}</small></div>
-              )}
+              <div class="work-main"><h3>{project.title}</h3><p>{project.summary}</p></div>
+              <div class="work-side"><span>{project.role}</span><small>{project.status} · {project.meta}</small></div>
               <span class="work-arrow">↗</span>
             </a>
           );
@@ -66,14 +65,15 @@ import { selectedWork, researchItems, experience, capabilities } from '../data/p
     <div class="research-list">
       {researchItems.slice(0, 4).map((item, i) => {
         const isAnonymous = 'anonymous' in item && item.anonymous === true;
-        return (
-          <article class={`research-row reveal ${isAnonymous ? 'anonymous-research' : ''}`}>
+        return isAnonymous ? (
+          <article class="research-row anonymous-research reveal">
+            <div><h3>{item.title}</h3></div>
+          </article>
+        ) : (
+          <article class="research-row reveal">
             <span>{String(i + 1).padStart(2, '0')}</span>
-            <div>
-              <h3>{item.title}</h3>
-              {!isAnonymous && <p>{item.venue}</p>}
-            </div>
-            {!isAnonymous && <p>{item.status}</p>}
+            <div><h3>{item.title}</h3><p>{item.venue}</p></div>
+            <p>{item.status}</p>
           </article>
         );
       })}
