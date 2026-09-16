@@ -5,12 +5,12 @@ import { selectedWork } from '../data/portfolio';
 
 <BaseLayout
   title="Selected Work — TundeCodes"
-  description="Selected production and research engineering work by Sodiq Babatunde Ologun."
+  description="Selected product, production, and research engineering work by Sodiq Babatunde Ologun."
 >
   <section class="page-hero section-shell reveal">
-    <p class="section-number">WORK / SELECTED ENGINEERING</p>
-    <h1>Systems, research tooling, and production engineering.</h1>
-    <p>Four projects that best represent how I think about architecture, reliability, operations, and technical depth.</p>
+    <p class="section-number">WORK / PRODUCT · SYSTEMS · RESEARCH</p>
+    <h1>Things I built, operated, and investigated deeply.</h1>
+    <p>Selected work across product engineering, production platforms, software reliability, and empirical software engineering. The emphasis is on ownership, technical judgment, and evidence.</p>
   </section>
 
   <section class="case-list section-shell">
@@ -18,7 +18,7 @@ import { selectedWork } from '../data/portfolio';
       <article class="case-study reveal" id={project.slug}>
         <div class="case-kicker">
           <span>{project.index}</span>
-          <span>{project.kind}</span>
+          <span>{project.kind} · {project.status}</span>
         </div>
         <div class="case-grid">
           <div class="case-title">
@@ -40,11 +40,13 @@ import { selectedWork } from '../data/portfolio';
             <div class="case-stack">
               {project.stack.map((item) => <span>{item}</span>)}
             </div>
-            <div class="case-link">
-              <a href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noreferrer' : undefined}>
-                Open project context ↗
-              </a>
-            </div>
+            {project.href !== `/work#${project.slug}` && (
+              <div class="case-link">
+                <a href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noreferrer' : undefined}>
+                  Open project context ↗
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </article>
